@@ -19,6 +19,6 @@
         </div>
     </c:forEach>
 </div>
-
+<a href="/ads/create">Create New ADD</a>
 </body>
 </html>

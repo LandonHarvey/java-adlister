@@ -4,19 +4,19 @@ DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id)
+    user_email VARCHAR(240) NOT NULL,
+    user_password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (user_id)
 );
 
 CREATE TABLE ads (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    ad_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
-    title VARCHAR(240) NOT NULL,
-    description TEXT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    ad_title VARCHAR(240) NOT NULL,
+    ad_des TEXT NOT NULL,
+    PRIMARY KEY (ad_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
         ON DELETE CASCADE
 );
